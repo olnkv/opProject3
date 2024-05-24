@@ -11,190 +11,190 @@ template <typename T>
 class MyVector
 {
 private:
-    size_t size;
-    size_t capacity;
-    T *data;
+    size_t size_;
+    size_t capacity_;
+    T *data_;
 
 public:
     int max_size() const { return std::numeric_limits<unsigned int>::max() / sizeof(T); }
-    MyVector() : size(0), capacity(0), data(new T[capacity]) {}
-    MyVector(std::initializer_list<T> init) : size(init.size()), capacity(init.size()){std::copy(init.begin(), init.end(), data)};
-    ~MyVector() { delete[] data; }
+    MyVector() : size_(0), capacity_(0), data_(new T[capacity_]) {}
+    MyVector(std::initializer_list<T> init) : size_(init.size_()), capacity_(init.size_()){std::copy(init.begin(), init.end(), data_);}
+    ~MyVector() { delete[] data_; }
 
-    MyVector(const MyVector<T> &vector_) : size(vector_.size), capacity(vector_.capacity), data(new T[capacity])
+    MyVector(const MyVector<T> &vector_) : size_(vector_.size_), capacity_(vector_.capacity_), data_(new T[capacity_])
     {
-        for (unsigned int i = 0; i < size; i++)
-            data[i] = vector_.data[i];
+        for (unsigned int i = 0; i < size_; i++)
+            data_[i] = vector_.data_[i];
     }
 
-    MyVector(MyVector &&vector_) noexcept : size(vector_.size), capacity(vector_.capacity), data(vector_.data)
+    MyVector(MyVector &&vector_) noexcept : size_(vector_.size_), capacity_(vector_.capacity_), data_(vector_.data_)
     {
-        vector_.size = 0;
-        vector_.capacity = 0;
-        vector_.data = nullptr;
+        vector_.size_ = 0;
+        vector_.capacity_ = 0;
+        vector_.data_ = nullptr;
     }
 
     MyVector &operator=(MyVector &&vector_)
     {
         if (this == &vector_)
             return *this;
-        delete[] data;
-        size = vector_.size;
-        capacity = vector_.capacity;
-        data = vector_.data;
-        vector_.size = 0;
-        vector_.capacity = 0;
-        vector_.data = nullptr;
+        delete[] data_;
+        size_ = vector_.size_;
+        capacity_ = vector_.capacity_;
+        data_ = vector_.data_;
+        vector_.size_ = 0;
+        vector_.capacity_ = 0;
+        vector_.data_ = nullptr;
         return *this;
     }
 
-    T &operator[](unsigned int index) { return data[index]; }
-    const T &operator[](unsigned int index) const { return data[index]; }
-    T &front() { return data[0]; }
-    const T &front() const { return data[0]; }
-    T &back() { return data[size - 1]; }
-    const T &back() const { return data[size - 1]; }
-    T *data() noexcept { return data; }
-    T *begin() noexcept { return data; }
-    const T *begin() const noexcept { return data; }
-    T *end() noexcept { return data + size; }
-    const T *end() const noexcept { return data + size; }
+    T &operator[](unsigned int index) { return data_[index]; }
+    const T &operator[](unsigned int index) const { return data_[index]; }
+    T &front() { return data_[0]; }
+    const T &front() const { return data_[0]; }
+    T &back() { return data_[size_ - 1]; }
+    const T &back() const { return data_[size_ - 1]; }
+    T *data() noexcept { return data_; }
+    T *begin() noexcept { return data_; }
+    const T *begin() const noexcept { return data_; }
+    T *end() noexcept { return data_ + size_; }
+    const T *end() const noexcept { return data_ + size_; }
     T &at(unsigned int index)
     {
-        if (index >= size)
+        if (index >= size_)
             throw std::out_of_range("index uz ribu!");
-        return data[index];
+        return data_[index];
     }
     const T &at(unsigned int index) const
     {
-        if (index >= size)
+        if (index >= size_)
             throw std::out_of_range("index uz ribu!");
-        return data[index];
+        return data_[index];
     }
 
-    unsigned int size() const { return size; }
-    unsigned int capacity() const { return capacity; }
-    bool empty() const { return size == 0; }
+    unsigned int size() const { return size_; }
+    unsigned int capacity() const { return capacity_; }
+    bool empty() const { return size_ == 0; }
 
     void reserve(unsigned int reserve_)
     {
-        if (reserve_ <= capacity)
+        if (reserve_ <= capacity_)
             return;
         if (reserve_ > max_size())
             throw std::length_error("Vektorius neturi tiek vietos!");
-        T *data_ = new T[reserve_];
-        for (unsigned int i = 0; i < size; i++)
-            data_[i] = data;
-        delete[] data;
-        data = data_;
-        capacity = reserve_;
+        T *newdata_ = new T[reserve_];
+        for (unsigned int i = 0; i < size_; i++)
+            newdata_[i] = data_[i];
+        delete[] data_;
+        data_ = newdata_;
+        capacity_ = reserve_;
     }
 
     void shrink_to_fit()
     {
-        if (size == capacity)
+        if (size_ == capacity_)
             return;
-        T *data_ = new T[size];
-        for (unsigned int i = 0; i < size; i++)
-            data_[i] = data[i];
-        delete[] data;
-        data = data_;
-        capacity = size;
+        T *data_ = new T[size_];
+        for (unsigned int i = 0; i < size_; i++)
+            data_[i] = data_[i];
+        delete[] data_;
+        data_ = data_;
+        capacity_ = size_;
     }
 
     void assign(unsigned int n, const T &value)
     {
-        if (n > capacity)
+        if (n > capacity_)
             reserve(n);
         for (unsigned int i = 0; i < n; i++)
-            data[i] = value;
-        size = n;
+            data_[i] = value;
+        size_ = n;
     }
 
-    void clear() { size = 0; }
+    void clear() { size_ = 0; }
 
     void push_back(const T &value)
     {
-        if (size >= capacity)
-            reserve(capacity == 0 ? 1 : size * 2);
-        data[size++] = value;
+        if (size_ >= capacity_)
+            reserve(capacity_ == 0 ? 1 : size_ * 2);
+        data_[size_++] = value;
     }
 
     T *insert(unsigned int index, const T &value)
     {
-        if (size >= capacity)
-            reserve(capacity == 0 ? 1 : size * 2);
-        for (unsigned int i = size; i > index; i--)
-            data[i] = data[i - 1];
-        data[index] = value;
-        size++;
-        return &data[index];
+        if (size_ >= capacity_)
+            reserve(capacity_ == 0 ? 1 : size_ * 2);
+        for (unsigned int i = size_; i > index; i--)
+            data_[i] = data_[i - 1];
+        data_[index] = value;
+        size_++;
+        return &data_[index];
     }
 
     T *emplace(unsigned int index, T &&value)
     {
-        if (size == capacity)
-            reserve(capacity == 0 ? 1 : capacity * 2);
-        for (unsigned int i = size; i > index; i--)
-            data[i] = data[i - 1];
-        data[index] = std::move(value);
-        size++;
-        return &data[index];
+        if (size_ == capacity_)
+            reserve(capacity_ == 0 ? 1 : capacity_ * 2);
+        for (unsigned int i = size_; i > index; i--)
+            data_[i] = data_[i - 1];
+        data_[index] = std::move(value);
+        size_++;
+        return &data_[index];
     }
 
     T &emplace_back(T &&value)
     {
-        if (size >= capacity)
-            reserve(capacity == 0 ? 1 : size * 2);
-        data[size++] = std::move(value);
-        return data[size - 1];
+        if (size_ >= capacity_)
+            reserve(capacity_ == 0 ? 1 : size_ * 2);
+        data_[size_++] = std::move(value);
+        return data_[size_ - 1];
     }
 
     void pop_back()
     {
-        if (size > 0)
+        if (size_ > 0)
         {
-            --size;
+            --size_;
         }
     }
 
     void resize(unsigned int size_)
     {
-        if (size_ > capacity)
+        if (size_ > capacity_)
             reserve(size_);
-        for (unsigned int i = size; i < size_; i++)
-            data[i] = T();
-        size = size_;
+        for (unsigned int i = size_; i < size_; i++)
+            data_[i] = T();
+        size_ = size_;
     }
 
     void swap(MyVector &vector_)
     {
-        std::swap(size, vector_.size);
-        std::swap(capacity, vector_.capacity);
-        std::swap(data, vector_.data);
+        std::swap(size_, vector_.size_);
+        std::swap(capacity_, vector_.capacity_);
+        std::swap(data_, vector_.data_);
     }
 
     T *erase(unsigned int index)
     {
-        for (unsigned int i = index; i < size - 1; i++)
-            data[i] = data[i + 1];
-        size--;
-        return &data[index];
+        for (unsigned int i = index; i < size_ - 1; i++)
+            data_[i] = data_[i + 1];
+        size_--;
+        return &data_[index];
     }
 
     T *erase(T *begin_, T *end_)
     {
-        if (begin_ >= data && end_ <= data + size)
+        if (begin_ >= data_ && end_ <= data_ + size_)
         {
             size_t deletedVal = end_ - begin_;
-            size_t movedVal = data + size - end_;
+            size_t movedVal = data_ + size_ - end_;
 
             for (size_t i = 0; i < movedVal; i++)
                 *(begin_ + i) = *(end_ + i);
 
-            size -= deletedVal;
+            size_ -= deletedVal;
 
-            if (end_ == data + size)
+            if (end_ == data_ + size_)
                 return end_;
         }
         return end_;

@@ -1,5 +1,6 @@
 #include "func.h"
 #include "person.h"
+#include "vector.h"
 
 const std::vector<std::string> nameList{"Nojus", "Domas", "Arvydas", "Rokas", "Vytautas", "Aurimas", "Joris", "Ramunas", "Povilas", "Mindaugas"};
 const std::vector<std::string> surnameList{"Vaicekauskas", "Kateiva", "Kardauskas", "Zalionis", "Norkus", "Ozelis", "Stasiunas", "Oginskas", "Petrauskas", "Pakuckas"};
@@ -394,4 +395,44 @@ void CinError()
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     throw std::runtime_error("Klaidinga ivestis");
+}
+
+void VectorTest()
+{
+    std::cout << std::fixed << std::setprecision(6);
+    std::cout << "\nElementu skaicius | std::vector laikas | MyVector laikas | std::vector atminties perskirstymai | MyVector atminties perskirstymai\n";
+    std::cout << "---------------------------------------------------------------------------------------------------------------------------------\n";
+
+    for (unsigned int sz : {10000, 100000, 1000000, 10000000, 100000000})
+    {
+        //std::vector
+        auto start_v1 = std::chrono::high_resolution_clock::now();
+        std::vector<int> v1;
+        int allocations = 0;
+        for (unsigned int i = 1; i <= sz; ++i)
+        {
+            v1.push_back(i);
+            if (v1.capacity() == v1.size())
+                ++allocations;
+        }
+        auto finish_v1 = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed_v1 = finish_v1 - start_v1;
+
+        //MyVector
+        auto start_v2 = std::chrono::high_resolution_clock::now();
+        MyVector<int> v2;
+        int myAllocations = 0;
+        for (unsigned int i = 1; i <= sz; ++i)
+        {
+            v2.push_back(i);
+            if (v2.capacity() == v2.size())
+                ++myAllocations;
+        }
+        auto finish_v2 = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed_v2 = finish_v2 - start_v2;
+
+        std::cout << std::setw(17) << sz << " | " << std::setw(18) << elapsed_v1.count() << " | " << std::setw(15) << elapsed_v2.count() << " | " << std::setw(35) << allocations
+                  << " | " << std::setw(32) << myAllocations << "\n";
+    }
+    std::cout << "\n";
 }

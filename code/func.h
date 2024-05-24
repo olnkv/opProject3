@@ -177,5 +177,6 @@ void ReadUser(std::vector<Student> &studVector);
 /// @param size Studentų skaičius
 /// @param hw Namų darbų skaičius
 void GenUser(std::vector<Student> &studVector, int size, int hw);
+void VectorTest();
 
 #endif

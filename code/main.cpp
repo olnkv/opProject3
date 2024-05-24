@@ -1,4 +1,5 @@
 #include "func.h"
+#include "vector.h"
 
 int main()
 {
@@ -17,11 +18,11 @@ int main()
     while (true)
         try
         {
-            std::cout << "Programos eigos pasirinkimas: \"1\" - Ivedimas ranka; \"2\" - Generavimas; \"3\" - Skaitymas is failo; \"4\" - Generuoti faila; \"5\" - Atrinkti studentus; \"6\" - Rezultatu isvedimas; \"7\" - Baigti darba" << std::endl;
+            std::cout << "Programos eigos pasirinkimas: \"1\" - Ivedimas ranka; \"2\" - Generavimas; \"3\" - Skaitymas is failo; \"4\" - Generuoti faila; \"5\" - Atrinkti studentus; \"6\" - Rezultatu isvedimas; \"7\" - Vektoriaus testavimas; \"8\" - Baigti darba" << std::endl;
             std::cin >> choice;
             if (std::cin.fail())
                 CinError();
-            if (choice < 1 || choice > 7)
+            if (choice < 1 || choice > 8)
                 throw std::runtime_error("Klaidinga ivestis");
             if (choice == 1)
                 ReadUser(studVector);
@@ -74,6 +75,8 @@ int main()
             if (choice == 6)
                 Results(studVector);
             if (choice == 7)
+                VectorTest();
+            if (choice == 8)
                 break;
             system("pause");
         }
