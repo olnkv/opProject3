@@ -18,7 +18,7 @@ private:
 public:
     int max_size() const { return std::numeric_limits<unsigned int>::max() / sizeof(T); }
     MyVector() : size_(0), capacity_(0), data_(new T[capacity_]) {}
-    MyVector(std::initializer_list<T> init) : size_(init.size_()), capacity_(init.size_()){std::copy(init.begin(), init.end(), data_);}
+    MyVector(std::initializer_list<T> init) : size_(init.size_()), capacity_(init.size_()) { std::copy(init.begin(), init.end(), data_); }
     ~MyVector() { delete[] data_; }
 
     MyVector(const MyVector<T> &vector_) : size_(vector_.size_), capacity_(vector_.capacity_), data_(new T[capacity_])
@@ -32,6 +32,19 @@ public:
         vector_.size_ = 0;
         vector_.capacity_ = 0;
         vector_.data_ = nullptr;
+    }
+
+    MyVector &operator=(const MyVector &&vector_)
+    {
+        if (this == &vector_)
+            return *this;
+        delete[] data_;
+        size_ = vector_.size_;
+        capacity_ = vector_.capacity_;
+        data_ = new T[capacity_];
+        for (unsigned int i = 0; i < size_; i++)
+            data_[i] = vector_.data_[i];
+        return *this;
     }
 
     MyVector &operator=(MyVector &&vector_)
@@ -62,13 +75,13 @@ public:
     T &at(unsigned int index)
     {
         if (index >= size_)
-            throw std::out_of_range("index uz ribu!");
+            throw std::out_of_range("Indeksas uz ribu!");
         return data_[index];
     }
     const T &at(unsigned int index) const
     {
         if (index >= size_)
-            throw std::out_of_range("index uz ribu!");
+            throw std::out_of_range("Indeksas uz ribu!");
         return data_[index];
     }
 
@@ -94,11 +107,11 @@ public:
     {
         if (size_ == capacity_)
             return;
-        T *data_ = new T[size_];
+        T *newdata_ = new T[size_];
         for (unsigned int i = 0; i < size_; i++)
-            data_[i] = data_[i];
+            newdata_[i] = data_[i];
         delete[] data_;
-        data_ = data_;
+        data_ = newdata_;
         capacity_ = size_;
     }
 
@@ -158,13 +171,13 @@ public:
         }
     }
 
-    void resize(unsigned int size_)
+    void resize(unsigned int newsize_)
     {
-        if (size_ > capacity_)
-            reserve(size_);
-        for (unsigned int i = size_; i < size_; i++)
+        if (newsize_ > capacity_)
+            reserve(newsize_);
+        for (unsigned int i = size_; i < newsize_; i++)
             data_[i] = T();
-        size_ = size_;
+        size_ = newsize_;
     }
 
     void swap(MyVector &vector_)
