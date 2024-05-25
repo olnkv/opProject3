@@ -18,7 +18,7 @@ private:
 public:
     int max_size() const { return std::numeric_limits<unsigned int>::max() / sizeof(T); }
     MyVector() : size_(0), capacity_(0), data_(new T[capacity_]) {}
-    MyVector(std::initializer_list<T> init) : size_(init.size_()), capacity_(init.size_()) { std::copy(init.begin(), init.end(), data_); }
+    MyVector(std::initializer_list<T> init) : size_(init.size()), capacity_(init.size()) { std::copy(init.begin(), init.end(), data_); }
     ~MyVector() { delete[] data_; }
 
     MyVector(const MyVector<T> &vector_) : size_(vector_.size_), capacity_(vector_.capacity_), data_(new T[capacity_])
@@ -34,7 +34,7 @@ public:
         vector_.data_ = nullptr;
     }
 
-    MyVector &operator=(const MyVector &&vector_)
+    MyVector &operator=(const MyVector &vector_)
     {
         if (this == &vector_)
             return *this;

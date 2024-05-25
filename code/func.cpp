@@ -2,8 +2,8 @@
 #include "person.h"
 #include "vector.h"
 
-const std::vector<std::string> nameList{"Nojus", "Domas", "Arvydas", "Rokas", "Vytautas", "Aurimas", "Joris", "Ramunas", "Povilas", "Mindaugas"};
-const std::vector<std::string> surnameList{"Vaicekauskas", "Kateiva", "Kardauskas", "Zalionis", "Norkus", "Ozelis", "Stasiunas", "Oginskas", "Petrauskas", "Pakuckas"};
+const MyVector<std::string> nameList{"Nojus", "Domas", "Arvydas", "Rokas", "Vytautas", "Aurimas", "Joris", "Ramunas", "Povilas", "Mindaugas"};
+const MyVector<std::string> surnameList{"Vaicekauskas", "Kateiva", "Kardauskas", "Zalionis", "Norkus", "Ozelis", "Stasiunas", "Oginskas", "Petrauskas", "Pakuckas"};
 
 Student::Student() : Person()
 {
@@ -147,7 +147,7 @@ double Student::Average()
 
 double Student::Median()
 {
-    std::vector<int> hwRes = get_HwRes();
+    MyVector<int> hwRes = get_HwRes();
     int size = hwRes_Size();
     if (size % 2 == 0 && size > 0)
         return (hwRes[size / 2 - 1] + hwRes[size / 2]) / 2.0 * 0.4 + 0.6 * get_exRes();
@@ -209,7 +209,7 @@ void GenFile(int size, int hw)
     std::cout << "Failas: " << input << " sugeneruotas sekmingai :)" << std::endl;
 }
 
-void ReadFile(std::vector<Student> &studVector)
+void ReadFile(MyVector<Student> &studVector)
 {
     try
     {
@@ -250,22 +250,22 @@ void ReadFile(std::vector<Student> &studVector)
     }
 }
 
-void Selection(std::vector<Student> &studVector, std::vector<Student> &best, int choice)
+void Selection(MyVector<Student> &studVector, MyVector<Student> &best, int choice)
 {
     try
     {
         if (choice == 1)
         {
             const auto start1 = std::chrono::high_resolution_clock::now();
-            for (auto it = studVector.begin(); it != studVector.end();)
+            for (size_t i = 0; i < studVector.size();)
             {
-                if (it->get_Avg() >= 5.0)
+                if (studVector[i].get_Avg() >= 5.0)
                 {
-                    best.push_back(std::move(*it));
-                    it = studVector.erase(it);
+                    best.push_back(std::move(studVector[i]));
+                    studVector.erase(i);
                 }
                 else
-                    ++it;
+                    ++i;
             }
             studVector.shrink_to_fit();
             best.shrink_to_fit();
@@ -297,15 +297,15 @@ void Selection(std::vector<Student> &studVector, std::vector<Student> &best, int
         if (choice == 2)
         {
             const auto start1 = std::chrono::high_resolution_clock::now();
-            for (auto it = studVector.begin(); it != studVector.end();)
+            for (size_t i = 0; i < studVector.size();)
             {
-                if (it->get_Med() >= 5.0)
+                if (studVector[i].get_Med() >= 5.0)
                 {
-                    best.push_back(std::move(*it));
-                    it = studVector.erase(it);
+                    best.push_back(std::move(studVector[i]));
+                    studVector.erase(i);
                 }
                 else
-                    ++it;
+                    ++i;
             }
             studVector.shrink_to_fit();
             best.shrink_to_fit();
@@ -341,7 +341,7 @@ void Selection(std::vector<Student> &studVector, std::vector<Student> &best, int
     }
 }
 
-void Results(std::vector<Student> studVector)
+void Results(MyVector<Student> studVector)
 {
     try
     {
@@ -359,7 +359,7 @@ void Results(std::vector<Student> studVector)
     }
 }
 
-void ReadUser(std::vector<Student> &studVector)
+void ReadUser(MyVector<Student> &studVector)
 {
     try
     {
@@ -373,7 +373,7 @@ void ReadUser(std::vector<Student> &studVector)
     }
 }
 
-void GenUser(std::vector<Student> &studVector, int size, int hw)
+void GenUser(MyVector<Student> &studVector, int size, int hw)
 {
     for (int i = 0; i < size; i++)
     {
@@ -400,14 +400,14 @@ void CinError()
 void VectorTest()
 {
     std::cout << std::fixed << std::setprecision(6);
-    std::cout << "\nElementu skaicius | std::vector laikas | MyVector laikas | std::vector atminties perskirstymai | MyVector atminties perskirstymai\n";
+    std::cout << "\nElementu skaicius | MyVector laikas | MyVector laikas | MyVector atminties perskirstymai | MyVector atminties perskirstymai\n";
     std::cout << "---------------------------------------------------------------------------------------------------------------------------------\n";
 
     for (unsigned int sz : {10000, 100000, 1000000, 10000000, 100000000})
     {
-        //std::vector
+        // MyVector
         auto start_v1 = std::chrono::high_resolution_clock::now();
-        std::vector<int> v1;
+        MyVector<int> v1;
         int allocations = 0;
         for (unsigned int i = 1; i <= sz; ++i)
         {
@@ -418,7 +418,7 @@ void VectorTest()
         auto finish_v1 = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed_v1 = finish_v1 - start_v1;
 
-        //MyVector
+        // MyVector
         auto start_v2 = std::chrono::high_resolution_clock::now();
         MyVector<int> v2;
         int myAllocations = 0;

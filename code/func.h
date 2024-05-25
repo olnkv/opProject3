@@ -11,6 +11,7 @@
 #include <string>
 #include <chrono>
 #include "person.h"
+#include "vector.h"
 
 /// @class Student
 /// @brief Studento klasė
@@ -18,7 +19,7 @@ class Student : public Person
 {
 private:
     double exRes_;
-    std::vector<int> hwRes_;
+    MyVector<int> hwRes_;
     double avg_, med_;
 
 public:
@@ -30,7 +31,7 @@ public:
     Student(const std::string name, const std::string surname);
     /// @brief Namų darbų gavimas
     /// @return Namų darbų vektorius
-    std::vector<int> get_HwRes() const { return hwRes_; }
+    MyVector<int> get_HwRes() const { return hwRes_; }
     /// @brief Egzamino rezultato gavimas
     /// @return Egzamino rezultatas
     double get_exRes() const { return exRes_; }
@@ -48,7 +49,7 @@ public:
     /// @return Namų darbų vektoriaus dydis
     int hwRes_Size() const { return hwRes_.size(); }
     /// @brief Namų darbų rūšiavimas didėjimo tvarka
-    void hw_Sort() { sort(hwRes_.begin(), hwRes_.end()); }
+    void hw_Sort() { std::sort(hwRes_.begin(), hwRes_.end()); }
     /// @brief Namų darbų sumos apskaičiavimas
     /// @return Namų darbų elementų suma
     int hw_Sum() { return std::accumulate(hwRes_.begin(), hwRes_.end(), 0); }
@@ -160,23 +161,23 @@ void CinError();
 void GenFile(int size, int hw);
 /// @brief Skaitymas iš failo į vektorių
 /// @param studVector Studentų vektorius
-void ReadFile(std::vector<Student> &studVector);
+void ReadFile(MyVector<Student> &studVector);
 /// @brief Studentų skirstymas į geresnių ir blogesnių grupes ir išvedimas į failą
 /// @param studVector Studentų vektorius
 /// @param best Geresnių studentų vektorius
 /// @param choice Skirstymo tipo pasirinkimas (pagal vidurkį/medianą)
-void Selection(std::vector<Student> &studVector, std::vector<Student> &best, int choice);
+void Selection(MyVector<Student> &studVector, MyVector<Student> &best, int choice);
 /// @brief Studentų vektoriaus išvedimas į ekraną
 /// @param studVector Studentų vektorius
-void Results(std::vector<Student> studVector);
+void Results(MyVector<Student> studVector);
 /// @brief Studentų įvedimas ranka
 /// @param studVector Studentų vektorius
-void ReadUser(std::vector<Student> &studVector);
+void ReadUser(MyVector<Student> &studVector);
 /// @brief Studentų generavimas į vektorių
 /// @param studVector Studentų vektorius
 /// @param size Studentų skaičius
 /// @param hw Namų darbų skaičius
-void GenUser(std::vector<Student> &studVector, int size, int hw);
+void GenUser(MyVector<Student> &studVector, int size, int hw);
 void VectorTest();
 
 #endif

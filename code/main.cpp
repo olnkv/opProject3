@@ -3,8 +3,8 @@
 
 int main()
 {
-    std::vector<Student> studVector;
-    std::vector<Student> best;
+    MyVector<Student> studVector;
+    MyVector<Student> best;
     int choice;
 
     Student Student0;
