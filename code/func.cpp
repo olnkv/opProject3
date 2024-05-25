@@ -2,9 +2,6 @@
 #include "person.h"
 #include "vector.h"
 
-const MyVector<std::string> nameList{"Nojus", "Domas", "Arvydas", "Rokas", "Vytautas", "Aurimas", "Joris", "Ramunas", "Povilas", "Mindaugas"};
-const MyVector<std::string> surnameList{"Vaicekauskas", "Kateiva", "Kardauskas", "Zalionis", "Norkus", "Ozelis", "Stasiunas", "Oginskas", "Petrauskas", "Pakuckas"};
-
 Student::Student() : Person()
 {
     hwRes_.clear();
@@ -107,6 +104,8 @@ std::istream &operator>>(std::istream &input, Student &Student_)
         std::cout << "Namu darbu pazymys (\"-1\", kad uzbaigti): ";
         std::cin >> hw;
         if (std::cin.fail())
+                CinError();
+        if (hw < -1 || hw > 10)
             throw std::runtime_error("Klaidinga ivestis");
         if (hw < 0)
             break;
@@ -378,8 +377,8 @@ void GenUser(MyVector<Student> &studVector, int size, int hw)
     for (int i = 0; i < size; i++)
     {
         Student temp;
-        temp.set_Name(nameList[RandGrade() - 1]);
-        temp.set_Surname(surnameList[RandGrade() - 1]);
+        temp.set_Name("Vardas" + std::to_string(i));
+        temp.set_Surname("Pavarde" + std::to_string(i));
         temp.clear_Hw();
         for (int j = 0; j < hw; j++)
             temp.set_Hw(RandGrade());
