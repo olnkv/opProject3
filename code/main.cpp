@@ -7,13 +7,6 @@ int main()
     MyVector<Student> best;
     int choice;
 
-    MyVector<int> vec;
-    for (unsigned int i = 0; i < 10; i++)
-        vec.push_back(i);
-    std::cout << "Talpa pries shrink_to_fit: " << vec.capacity() << "\n";
-    vec.shrink_to_fit();
-    std::cout << "Talpa po shrink_to_fit: " << vec.capacity() << "\n";
-    return 0;
     Student Student0;
     Student Student1("Edvin", "Olenkovic");
     Student Student2("Vardenis", "Pavardenis");
