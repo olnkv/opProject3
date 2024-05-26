@@ -8,15 +8,11 @@ int main()
     int choice;
 
     MyVector<int> vec;
-    vec.push_back(1);
-    vec.push_back(2);
-    vec.push_back(3);
-    vec.pop_back();
-
-    std::cout << "MyVector reiksmes:";
-    for (unsigned int i = 0; i < vec.size(); i++)
-        std::cout << ' ' << vec[i];
-    std::cout << '\n';
+    for (unsigned int i = 0; i < 10; i++)
+        vec.push_back(i);
+    std::cout << "Talpa pries shrink_to_fit: " << vec.capacity() << "\n";
+    vec.shrink_to_fit();
+    std::cout << "Talpa po shrink_to_fit: " << vec.capacity() << "\n";
     return 0;
     Student Student0;
     Student Student1("Edvin", "Olenkovic");
