@@ -22,7 +22,7 @@ public:
     /// @return Maksimalus vektoriaus dydis
     int max_size() const { return std::numeric_limits<unsigned int>::max() / sizeof(T); }
     MyVector() : size_(0), capacity_(0), data_(new T[capacity_]) {}
-    MyVector(std::initializer_list<T> init) : size_(init.size()), capacity_(init.size()) { std::copy(init.begin(), init.end(), data_); }
+    MyVector(std::initializer_list<T> init) : size_(init.size()), capacity_(init.size()), data_(new T[capacity_]) { std::copy(init.begin(), init.end(), data_); }
     ~MyVector() { delete[] data_; }
 
     /// @brief Kopijavimo konstruktorius
