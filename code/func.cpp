@@ -1,8 +1,6 @@
 #include "func.h"
 #include "person.h"
-
-const std::vector<std::string> nameList{"Nojus", "Domas", "Arvydas", "Rokas", "Vytautas", "Aurimas", "Joris", "Ramunas", "Povilas", "Mindaugas"};
-const std::vector<std::string> surnameList{"Vaicekauskas", "Kateiva", "Kardauskas", "Zalionis", "Norkus", "Ozelis", "Stasiunas", "Oginskas", "Petrauskas", "Pakuckas"};
+#include "vector.h"
 
 Student::Student() : Person()
 {
@@ -106,6 +104,8 @@ std::istream &operator>>(std::istream &input, Student &Student_)
         std::cout << "Namu darbu pazymys (\"-1\", kad uzbaigti): ";
         std::cin >> hw;
         if (std::cin.fail())
+                CinError();
+        if (hw < -1 || hw > 10)
             throw std::runtime_error("Klaidinga ivestis");
         if (hw < 0)
             break;
@@ -146,7 +146,7 @@ double Student::Average()
 
 double Student::Median()
 {
-    std::vector<int> hwRes = get_HwRes();
+    MyVector<int> hwRes = get_HwRes();
     int size = hwRes_Size();
     if (size % 2 == 0 && size > 0)
         return (hwRes[size / 2 - 1] + hwRes[size / 2]) / 2.0 * 0.4 + 0.6 * get_exRes();
@@ -208,7 +208,7 @@ void GenFile(int size, int hw)
     std::cout << "Failas: " << input << " sugeneruotas sekmingai :)" << std::endl;
 }
 
-void ReadFile(std::vector<Student> &studVector)
+void ReadFile(MyVector<Student> &studVector)
 {
     try
     {
@@ -249,22 +249,22 @@ void ReadFile(std::vector<Student> &studVector)
     }
 }
 
-void Selection(std::vector<Student> &studVector, std::vector<Student> &best, int choice)
+void Selection(MyVector<Student> &studVector, MyVector<Student> &best, int choice)
 {
     try
     {
         if (choice == 1)
         {
             const auto start1 = std::chrono::high_resolution_clock::now();
-            for (auto it = studVector.begin(); it != studVector.end();)
+            for (size_t i = 0; i < studVector.size();)
             {
-                if (it->get_Avg() >= 5.0)
+                if (studVector[i].get_Avg() >= 5.0)
                 {
-                    best.push_back(std::move(*it));
-                    it = studVector.erase(it);
+                    best.push_back(std::move(studVector[i]));
+                    studVector.erase(i);
                 }
                 else
-                    ++it;
+                    ++i;
             }
             studVector.shrink_to_fit();
             best.shrink_to_fit();
@@ -296,15 +296,15 @@ void Selection(std::vector<Student> &studVector, std::vector<Student> &best, int
         if (choice == 2)
         {
             const auto start1 = std::chrono::high_resolution_clock::now();
-            for (auto it = studVector.begin(); it != studVector.end();)
+            for (size_t i = 0; i < studVector.size();)
             {
-                if (it->get_Med() >= 5.0)
+                if (studVector[i].get_Med() >= 5.0)
                 {
-                    best.push_back(std::move(*it));
-                    it = studVector.erase(it);
+                    best.push_back(std::move(studVector[i]));
+                    studVector.erase(i);
                 }
                 else
-                    ++it;
+                    ++i;
             }
             studVector.shrink_to_fit();
             best.shrink_to_fit();
@@ -340,7 +340,7 @@ void Selection(std::vector<Student> &studVector, std::vector<Student> &best, int
     }
 }
 
-void Results(std::vector<Student> studVector)
+void Results(MyVector<Student> studVector)
 {
     try
     {
@@ -358,7 +358,7 @@ void Results(std::vector<Student> studVector)
     }
 }
 
-void ReadUser(std::vector<Student> &studVector)
+void ReadUser(MyVector<Student> &studVector)
 {
     try
     {
@@ -372,13 +372,13 @@ void ReadUser(std::vector<Student> &studVector)
     }
 }
 
-void GenUser(std::vector<Student> &studVector, int size, int hw)
+void GenUser(MyVector<Student> &studVector, int size, int hw)
 {
     for (int i = 0; i < size; i++)
     {
         Student temp;
-        temp.set_Name(nameList[RandGrade() - 1]);
-        temp.set_Surname(surnameList[RandGrade() - 1]);
+        temp.set_Name("Vardas" + std::to_string(i));
+        temp.set_Surname("Pavarde" + std::to_string(i));
         temp.clear_Hw();
         for (int j = 0; j < hw; j++)
             temp.set_Hw(RandGrade());
@@ -394,4 +394,44 @@ void CinError()
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     throw std::runtime_error("Klaidinga ivestis");
+}
+
+void VectorTest()
+{
+    std::cout << std::fixed << std::setprecision(6);
+    std::cout << "\nElementu skaicius | std::vector laikas | MyVector laikas | std::vector atminties perskirstymai | MyVector atminties perskirstymai\n";
+    std::cout << "---------------------------------------------------------------------------------------------------------------------------------\n";
+
+    for (unsigned int sz : {10000, 100000, 1000000, 10000000, 100000000})
+    {
+        // std::vector
+        auto start_v1 = std::chrono::high_resolution_clock::now();
+        MyVector<int> v1;
+        int allocations = 0;
+        for (unsigned int i = 1; i <= sz; ++i)
+        {
+            v1.push_back(i);
+            if (v1.capacity() == v1.size())
+                ++allocations;
+        }
+        auto finish_v1 = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed_v1 = finish_v1 - start_v1;
+
+        // MyVector
+        auto start_v2 = std::chrono::high_resolution_clock::now();
+        MyVector<int> v2;
+        int myAllocations = 0;
+        for (unsigned int i = 1; i <= sz; ++i)
+        {
+            v2.push_back(i);
+            if (v2.capacity() == v2.size())
+                ++myAllocations;
+        }
+        auto finish_v2 = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed_v2 = finish_v2 - start_v2;
+
+        std::cout << std::setw(17) << sz << " | " << std::setw(18) << elapsed_v1.count() << " | " << std::setw(15) << elapsed_v2.count() << " | " << std::setw(35) << allocations
+                  << " | " << std::setw(32) << myAllocations << "\n";
+    }
+    std::cout << "\n";
 }

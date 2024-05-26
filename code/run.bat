@@ -6,4 +6,5 @@ cmake -G "Ninja" -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ ../
 cmake --build .
 cls
 Tests\testout.exe
+Tests\vectestout.exe
 Debug\opProject.exe

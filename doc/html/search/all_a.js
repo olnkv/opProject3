@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['randgrade_0',['RandGrade',['../func_8cpp.html#a597b1d80c90eada5d3acd0052b3c2838',1,'RandGrade():&#160;func.cpp'],['../func_8h.html#a597b1d80c90eada5d3acd0052b3c2838',1,'RandGrade():&#160;func.cpp']]],
-  ['readfile_1',['ReadFile',['../func_8cpp.html#a0cfdd68b2d6e334114607ea3839e79ae',1,'ReadFile(std::vector&lt; Student &gt; &amp;studVector):&#160;func.cpp'],['../func_8h.html#a0cfdd68b2d6e334114607ea3839e79ae',1,'ReadFile(std::vector&lt; Student &gt; &amp;studVector):&#160;func.cpp']]],
-  ['readuser_2',['ReadUser',['../func_8cpp.html#ab66afdd359a9a930b3ac51755cd7c895',1,'ReadUser(std::vector&lt; Student &gt; &amp;studVector):&#160;func.cpp'],['../func_8h.html#ab66afdd359a9a930b3ac51755cd7c895',1,'ReadUser(std::vector&lt; Student &gt; &amp;studVector):&#160;func.cpp']]],
-  ['results_3',['Results',['../func_8cpp.html#aa961a857b7f607687bccec8c859b715f',1,'Results(std::vector&lt; Student &gt; studVector):&#160;func.cpp'],['../func_8h.html#aa961a857b7f607687bccec8c859b715f',1,'Results(std::vector&lt; Student &gt; studVector):&#160;func.cpp']]]
+  ['operator_3c_3c_0',['operator&lt;&lt;',['../class_student.html#a23e9cead4dcbc183b3da90f1f63ac00b',1,'Student::operator&lt;&lt;'],['../class_student.html#ad6be108c12857bd27be96a7dab55d362',1,'Student::operator&lt;&lt;']]],
+  ['operator_3d_1',['operator=',['../class_student.html#a0287dbd540a4bb8cf8f2f07877aec5b5',1,'Student::operator=(const Student &amp;Student_)'],['../class_student.html#ad10750f9ea7cba230effc5ee95a00a42',1,'Student::operator=(Student &amp;&amp;Student_) noexcept'],['../class_my_vector.html#adca5fabc78f531adeda901309fad71a9',1,'MyVector::operator=(const MyVector &amp;vector_)'],['../class_my_vector.html#aaa6c9144887d01690b2b844336bfec20',1,'MyVector::operator=(MyVector &amp;&amp;vector_)']]],
+  ['operator_3e_3e_2',['operator&gt;&gt;',['../class_student.html#a0ae225f243fa6ae4e3ba1e72f56062a8',1,'Student::operator&gt;&gt;'],['../class_student.html#a8ad16d8a245e3933dc23362163e6e560',1,'Student::operator&gt;&gt;']]],
+  ['operator_5b_5d_3',['operator[]',['../class_my_vector.html#aa47fd7f7317912bbd8b4e3811bcabe5e',1,'MyVector::operator[](unsigned int index)'],['../class_my_vector.html#ad2041c990ba4e1ab11229c1bf336f389',1,'MyVector::operator[](unsigned int index) const']]]
 ];

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['person_0',['Person',['../class_person.html',1,'Person'],['../class_person.html#a0397c6f89fafc12e738923f612bc41a3',1,'Person::Person()'],['../class_person.html#a424ea1ffe71ff8cb489efc1513b48b05',1,'Person::Person(const std::string &amp;name, const std::string &amp;surname)']]],
-  ['person_2eh_1',['person.h',['../person_8h.html',1,'']]]
+  ['max_5fsize_0',['max_size',['../class_my_vector.html#a90ba332da8d9819c9004d3800f7433df',1,'MyVector']]],
+  ['median_1',['Median',['../class_student.html#ad0bed89a292d3ef6b4654b7121abdf7f',1,'Student']]],
+  ['myvector_2',['MyVector',['../class_my_vector.html',1,'MyVector&lt; T &gt;'],['../class_my_vector.html#a350d110ea9f0b5d0698cc4690bf82a3f',1,'MyVector::MyVector(const MyVector&lt; T &gt; &amp;vector_)'],['../class_my_vector.html#a52aead4d7da2e679033f58ca69594b07',1,'MyVector::MyVector(MyVector &amp;&amp;vector_) noexcept']]],
+  ['myvector_3c_20int_20_3e_3',['MyVector&lt; int &gt;',['../class_my_vector.html',1,'']]]
 ];
