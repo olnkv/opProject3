@@ -12,10 +12,7 @@ int main()
     vec.push_back(2);
     vec.push_back(3);
 
-    std::cout << "MyVector reiksmes:";
-    for (unsigned int i = 0; i < vec.size(); i++)
-        std::cout << ' ' << vec[i];
-    std::cout << '\n';
+    std::cout << "MyVector talpa: " << vec.capacity() << std::endl;
     return 0;
     Student Student0;
     Student Student1("Edvin", "Olenkovic");
