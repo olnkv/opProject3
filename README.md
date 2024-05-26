@@ -94,6 +94,15 @@ Ar MyVector tuscias? Taip
 - Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz
 - RAM(16,0 GB)
 - Samsung SSD 970 EVO Plus 500GB
+### Konteinerių užpildymas
+| Elementu skaicius | std::vector laikas | MyVector laikas | std::vector atminties perskirstymai | MyVector atminties perskirstymai |
+|-------------------|--------------------|-----------------|-------------------------------------|----------------------------------|
+| 10000             | 0.000068s           | 0.000041s        | 14                                  | 14                               |
+| 100000            | 0.000384s           | 0.000293s        | 17                                  | 17                               |
+| 1000000           | 0.002038s           | 0.001965s        | 20                                  | 20                               |
+| 10000000          | 0.024393s           | 0.024126s        | 24                                  | 24                               |
+| 100000000         | 0.233874s           | 0.227221s        | 27                                  | 27                               |
+
 ### Class (nuo v1.1)
                                                  100000 Studentų
 

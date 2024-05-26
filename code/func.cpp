@@ -399,12 +399,12 @@ void CinError()
 void VectorTest()
 {
     std::cout << std::fixed << std::setprecision(6);
-    std::cout << "\nElementu skaicius | MyVector laikas | MyVector laikas | MyVector atminties perskirstymai | MyVector atminties perskirstymai\n";
+    std::cout << "\nElementu skaicius | std::vector laikas | MyVector laikas | std::vector atminties perskirstymai | MyVector atminties perskirstymai\n";
     std::cout << "---------------------------------------------------------------------------------------------------------------------------------\n";
 
     for (unsigned int sz : {10000, 100000, 1000000, 10000000, 100000000})
     {
-        // MyVector
+        // std::vector
         auto start_v1 = std::chrono::high_resolution_clock::now();
         MyVector<int> v1;
         int allocations = 0;
