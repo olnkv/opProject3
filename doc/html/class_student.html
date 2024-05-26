@@ -10,10 +10,6 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -27,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">opProject<span id="projectnumber">&#160;v2.0</span>
+   <div id="projectname">opProject<span id="projectnumber">&#160;v3.0</span>
    </div>
   </td>
  </tr>
@@ -52,23 +48,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('class_student.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -90,6 +69,7 @@ $(function(){initNavTree('class_student.html',''); initResizable(); });
 </div>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -115,15 +95,16 @@ Inheritance diagram for Student:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af9168cedbfa5565cf0b20c1a9d3f5c9d" id="r_af9168cedbfa5565cf0b20c1a9d3f5c9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9168cedbfa5565cf0b20c1a9d3f5c9d">Student</a> ()</td></tr>
-<tr class="memdesc:af9168cedbfa5565cf0b20c1a9d3f5c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default konstruktorius.  <br /></td></tr>
+<tr class="memitem:af9168cedbfa5565cf0b20c1a9d3f5c9d" id="r_af9168cedbfa5565cf0b20c1a9d3f5c9d"><td class="memItemLeft" align="right" valign="top"><a id="af9168cedbfa5565cf0b20c1a9d3f5c9d" name="af9168cedbfa5565cf0b20c1a9d3f5c9d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Student</b> ()</td></tr>
+<tr class="memdesc:af9168cedbfa5565cf0b20c1a9d3f5c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default konstruktorius. <br /></td></tr>
 <tr class="separator:af9168cedbfa5565cf0b20c1a9d3f5c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9d2879219f5de85ee2aa1bb95fb97d2" id="r_ac9d2879219f5de85ee2aa1bb95fb97d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9d2879219f5de85ee2aa1bb95fb97d2">Student</a> (const std::string name, const std::string surname)</td></tr>
 <tr class="memdesc:ac9d2879219f5de85ee2aa1bb95fb97d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Studento klasės konstruktorius.  <br /></td></tr>
 <tr class="separator:ac9d2879219f5de85ee2aa1bb95fb97d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d18da42d01f674cdf7647af8f3fb1ec" id="r_a8d18da42d01f674cdf7647af8f3fb1ec"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d18da42d01f674cdf7647af8f3fb1ec">get_HwRes</a> () const</td></tr>
-<tr class="memdesc:a8d18da42d01f674cdf7647af8f3fb1ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namų darbų gavimas.  <br /></td></tr>
-<tr class="separator:a8d18da42d01f674cdf7647af8f3fb1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a881e06367d53c6b8ff8a61332ebd36e4" id="r_a881e06367d53c6b8ff8a61332ebd36e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_my_vector.html">MyVector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a881e06367d53c6b8ff8a61332ebd36e4">get_HwRes</a> () const</td></tr>
+<tr class="memdesc:a881e06367d53c6b8ff8a61332ebd36e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namų darbų gavimas.  <br /></td></tr>
+<tr class="separator:a881e06367d53c6b8ff8a61332ebd36e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe4405154df86cf03569a5b63901c841" id="r_afe4405154df86cf03569a5b63901c841"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe4405154df86cf03569a5b63901c841">get_exRes</a> () const</td></tr>
 <tr class="memdesc:afe4405154df86cf03569a5b63901c841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Egzamino rezultato gavimas.  <br /></td></tr>
 <tr class="separator:afe4405154df86cf03569a5b63901c841"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,8 +120,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1da823dcb35568fc992a09cb9dd8b13" id="r_ad1da823dcb35568fc992a09cb9dd8b13"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1da823dcb35568fc992a09cb9dd8b13">hwRes_Size</a> () const</td></tr>
 <tr class="memdesc:ad1da823dcb35568fc992a09cb9dd8b13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namų darbų vektoriaus didžio gavimas.  <br /></td></tr>
 <tr class="separator:ad1da823dcb35568fc992a09cb9dd8b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b0aab433de4c2d2ffed07f5dd37bd17" id="r_a2b0aab433de4c2d2ffed07f5dd37bd17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b0aab433de4c2d2ffed07f5dd37bd17">hw_Sort</a> ()</td></tr>
-<tr class="memdesc:a2b0aab433de4c2d2ffed07f5dd37bd17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namų darbų rūšiavimas didėjimo tvarka.  <br /></td></tr>
+<tr class="memitem:a2b0aab433de4c2d2ffed07f5dd37bd17" id="r_a2b0aab433de4c2d2ffed07f5dd37bd17"><td class="memItemLeft" align="right" valign="top"><a id="a2b0aab433de4c2d2ffed07f5dd37bd17" name="a2b0aab433de4c2d2ffed07f5dd37bd17"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>hw_Sort</b> ()</td></tr>
+<tr class="memdesc:a2b0aab433de4c2d2ffed07f5dd37bd17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namų darbų rūšiavimas didėjimo tvarka. <br /></td></tr>
 <tr class="separator:a2b0aab433de4c2d2ffed07f5dd37bd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3f9f6ce11198881ab37fe953ee5f0aa" id="r_ab3f9f6ce11198881ab37fe953ee5f0aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3f9f6ce11198881ab37fe953ee5f0aa">hw_Sum</a> ()</td></tr>
 <tr class="memdesc:ab3f9f6ce11198881ab37fe953ee5f0aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namų darbų sumos apskaičiavimas.  <br /></td></tr>
@@ -148,8 +130,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d0b465f0893f75a0af48632b3d847cf" id="r_a3d0b465f0893f75a0af48632b3d847cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d0b465f0893f75a0af48632b3d847cf">hw_Last</a> ()</td></tr>
 <tr class="memdesc:a3d0b465f0893f75a0af48632b3d847cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paskutinio namų darbų elemento gavimas.  <br /></td></tr>
 <tr class="separator:a3d0b465f0893f75a0af48632b3d847cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54a8ea060d6cd04222c3a2f89829f105" id="r_a54a8ea060d6cd04222c3a2f89829f105"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54a8ea060d6cd04222c3a2f89829f105">~Student</a> ()</td></tr>
-<tr class="memdesc:a54a8ea060d6cd04222c3a2f89829f105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Studento klasės destruktorius.  <br /></td></tr>
+<tr class="memitem:a54a8ea060d6cd04222c3a2f89829f105" id="r_a54a8ea060d6cd04222c3a2f89829f105"><td class="memItemLeft" align="right" valign="top"><a id="a54a8ea060d6cd04222c3a2f89829f105" name="a54a8ea060d6cd04222c3a2f89829f105"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~Student</b> ()</td></tr>
+<tr class="memdesc:a54a8ea060d6cd04222c3a2f89829f105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Studento klasės destruktorius. <br /></td></tr>
 <tr class="separator:a54a8ea060d6cd04222c3a2f89829f105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a934bb10e3d570ff35d53f1a9680c6c0d" id="r_a934bb10e3d570ff35d53f1a9680c6c0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a934bb10e3d570ff35d53f1a9680c6c0d">set_ExRes</a> (double exRes)</td></tr>
 <tr class="memdesc:a934bb10e3d570ff35d53f1a9680c6c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Egzamino rezultato priskyrimas.  <br /></td></tr>
@@ -163,14 +146,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa97d3e2299b5f3a0b1cf853454751ee" id="r_aaa97d3e2299b5f3a0b1cf853454751ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa97d3e2299b5f3a0b1cf853454751ee">set_Hw</a> (int hw)</td></tr>
 <tr class="memdesc:aaa97d3e2299b5f3a0b1cf853454751ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pažymio pridėjimas į namų darbų vektoriu.  <br /></td></tr>
 <tr class="separator:aaa97d3e2299b5f3a0b1cf853454751ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0c981e26367b6f1c9d601546cd71265" id="r_ae0c981e26367b6f1c9d601546cd71265"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0c981e26367b6f1c9d601546cd71265">del_LastHw</a> ()</td></tr>
-<tr class="memdesc:ae0c981e26367b6f1c9d601546cd71265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paskutinio namų darbų elemento ištrynimas.  <br /></td></tr>
+<tr class="memitem:ae0c981e26367b6f1c9d601546cd71265" id="r_ae0c981e26367b6f1c9d601546cd71265"><td class="memItemLeft" align="right" valign="top"><a id="ae0c981e26367b6f1c9d601546cd71265" name="ae0c981e26367b6f1c9d601546cd71265"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>del_LastHw</b> ()</td></tr>
+<tr class="memdesc:ae0c981e26367b6f1c9d601546cd71265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paskutinio namų darbų elemento ištrynimas. <br /></td></tr>
 <tr class="separator:ae0c981e26367b6f1c9d601546cd71265"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a030e4f61ffb96affa5737e148ce1af41" id="r_a030e4f61ffb96affa5737e148ce1af41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a030e4f61ffb96affa5737e148ce1af41">clear_Hw</a> ()</td></tr>
-<tr class="memdesc:a030e4f61ffb96affa5737e148ce1af41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namų darbų vektoriaus išvalymas.  <br /></td></tr>
+<tr class="memitem:a030e4f61ffb96affa5737e148ce1af41" id="r_a030e4f61ffb96affa5737e148ce1af41"><td class="memItemLeft" align="right" valign="top"><a id="a030e4f61ffb96affa5737e148ce1af41" name="a030e4f61ffb96affa5737e148ce1af41"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_Hw</b> ()</td></tr>
+<tr class="memdesc:a030e4f61ffb96affa5737e148ce1af41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namų darbų vektoriaus išvalymas. <br /></td></tr>
 <tr class="separator:a030e4f61ffb96affa5737e148ce1af41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a7409d25d6f6306aa300c4f0dc385e8" id="r_a1a7409d25d6f6306aa300c4f0dc385e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a7409d25d6f6306aa300c4f0dc385e8">clear_All</a> ()</td></tr>
-<tr class="memdesc:a1a7409d25d6f6306aa300c4f0dc385e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Viso studento išvalymas.  <br /></td></tr>
+<tr class="memitem:a1a7409d25d6f6306aa300c4f0dc385e8" id="r_a1a7409d25d6f6306aa300c4f0dc385e8"><td class="memItemLeft" align="right" valign="top"><a id="a1a7409d25d6f6306aa300c4f0dc385e8" name="a1a7409d25d6f6306aa300c4f0dc385e8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_All</b> ()</td></tr>
+<tr class="memdesc:a1a7409d25d6f6306aa300c4f0dc385e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Viso studento išvalymas. <br /></td></tr>
 <tr class="separator:a1a7409d25d6f6306aa300c4f0dc385e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bb2e4b050916173d91a0105431e5cf4" id="r_a1bb2e4b050916173d91a0105431e5cf4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bb2e4b050916173d91a0105431e5cf4">Average</a> ()</td></tr>
 <tr class="memdesc:a1bb2e4b050916173d91a0105431e5cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Galutinio pagal vidurkį skaičiavimas.  <br /></td></tr>
@@ -222,45 +208,30 @@ Friends</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_person"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_person')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_person.html">Person</a></td></tr>
-<tr class="memitem:a0397c6f89fafc12e738923f612bc41a3 inherit pro_methods_class_person" id="r_a0397c6f89fafc12e738923f612bc41a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a0397c6f89fafc12e738923f612bc41a3">Person</a> ()</td></tr>
-<tr class="memdesc:a0397c6f89fafc12e738923f612bc41a3 inherit pro_methods_class_person"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default konstruktorius.  <br /></td></tr>
+<tr class="memitem:a0397c6f89fafc12e738923f612bc41a3 inherit pro_methods_class_person" id="r_a0397c6f89fafc12e738923f612bc41a3"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>Person</b> ()</td></tr>
+<tr class="memdesc:a0397c6f89fafc12e738923f612bc41a3 inherit pro_methods_class_person"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default konstruktorius. <br /></td></tr>
 <tr class="separator:a0397c6f89fafc12e738923f612bc41a3 inherit pro_methods_class_person"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a424ea1ffe71ff8cb489efc1513b48b05 inherit pro_methods_class_person" id="r_a424ea1ffe71ff8cb489efc1513b48b05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a424ea1ffe71ff8cb489efc1513b48b05">Person</a> (const std::string &amp;name, const std::string &amp;surname)</td></tr>
 <tr class="memdesc:a424ea1ffe71ff8cb489efc1513b48b05 inherit pro_methods_class_person"><td class="mdescLeft">&#160;</td><td class="mdescRight">Žmogaus klasės konstruktorius.  <br /></td></tr>
 <tr class="separator:a424ea1ffe71ff8cb489efc1513b48b05 inherit pro_methods_class_person"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b5729bb56531c93312b1179c8ee4b71 inherit pro_methods_class_person" id="r_a6b5729bb56531c93312b1179c8ee4b71"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a6b5729bb56531c93312b1179c8ee4b71">~Person</a> ()</td></tr>
-<tr class="memdesc:a6b5729bb56531c93312b1179c8ee4b71 inherit pro_methods_class_person"><td class="mdescLeft">&#160;</td><td class="mdescRight">Žmogus klasės destruktorius.  <br /></td></tr>
+<tr class="memitem:a6b5729bb56531c93312b1179c8ee4b71 inherit pro_methods_class_person" id="r_a6b5729bb56531c93312b1179c8ee4b71"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Person</b> ()</td></tr>
+<tr class="memdesc:a6b5729bb56531c93312b1179c8ee4b71 inherit pro_methods_class_person"><td class="mdescLeft">&#160;</td><td class="mdescRight">Žmogus klasės destruktorius. <br /></td></tr>
 <tr class="separator:a6b5729bb56531c93312b1179c8ee4b71 inherit pro_methods_class_person"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_person"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_person')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_person.html">Person</a></td></tr>
-<tr class="memitem:a4b84c9da9f39099f54ee1c1c6fc56c0c inherit pro_attribs_class_person" id="r_a4b84c9da9f39099f54ee1c1c6fc56c0c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a4b84c9da9f39099f54ee1c1c6fc56c0c">name_</a></td></tr>
+<tr class="memitem:a4b84c9da9f39099f54ee1c1c6fc56c0c inherit pro_attribs_class_person" id="r_a4b84c9da9f39099f54ee1c1c6fc56c0c"><td class="memItemLeft" align="right" valign="top">
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name_</b></td></tr>
 <tr class="separator:a4b84c9da9f39099f54ee1c1c6fc56c0c inherit pro_attribs_class_person"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf9e2c1ffbeec1a16f8f99821458e74d inherit pro_attribs_class_person" id="r_abf9e2c1ffbeec1a16f8f99821458e74d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#abf9e2c1ffbeec1a16f8f99821458e74d">surname_</a></td></tr>
+<tr class="memitem:abf9e2c1ffbeec1a16f8f99821458e74d inherit pro_attribs_class_person" id="r_abf9e2c1ffbeec1a16f8f99821458e74d"><td class="memItemLeft" align="right" valign="top">
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>surname_</b></td></tr>
 <tr class="separator:abf9e2c1ffbeec1a16f8f99821458e74d inherit pro_attribs_class_person"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Studento klasė </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af9168cedbfa5565cf0b20c1a9d3f5c9d" name="af9168cedbfa5565cf0b20c1a9d3f5c9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9168cedbfa5565cf0b20c1a9d3f5c9d">&#9670;&#160;</a></span>Student() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Student::Student </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Default konstruktorius. </p>
-
-</div>
-</div>
 <a id="ac9d2879219f5de85ee2aa1bb95fb97d2" name="ac9d2879219f5de85ee2aa1bb95fb97d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9d2879219f5de85ee2aa1bb95fb97d2">&#9670;&#160;</a></span>Student() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9d2879219f5de85ee2aa1bb95fb97d2">&#9670;&#160;</a></span>Student() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,27 +260,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a54a8ea060d6cd04222c3a2f89829f105" name="a54a8ea060d6cd04222c3a2f89829f105"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54a8ea060d6cd04222c3a2f89829f105">&#9670;&#160;</a></span>~Student()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Student::~Student </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Studento klasės destruktorius. </p>
-
-</div>
-</div>
 <a id="acc59e9bb9b9c91ed4e7d5b92b473ac4f" name="acc59e9bb9b9c91ed4e7d5b92b473ac4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc59e9bb9b9c91ed4e7d5b92b473ac4f">&#9670;&#160;</a></span>Student() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acc59e9bb9b9c91ed4e7d5b92b473ac4f">&#9670;&#160;</a></span>Student() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,7 +286,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a148a2477ffdafb08baf43149c8811d53" name="a148a2477ffdafb08baf43149c8811d53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a148a2477ffdafb08baf43149c8811d53">&#9670;&#160;</a></span>Student() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a148a2477ffdafb08baf43149c8811d53">&#9670;&#160;</a></span>Student() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -384,87 +336,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Galutinio pagal vidurkį skaičiavimas. </p>
 <dl class="section return"><dt>Returns</dt><dd>Galutinis pagal vidurkį </dd></dl>
-
-</div>
-</div>
-<a id="a1a7409d25d6f6306aa300c4f0dc385e8" name="a1a7409d25d6f6306aa300c4f0dc385e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a7409d25d6f6306aa300c4f0dc385e8">&#9670;&#160;</a></span>clear_All()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Student::clear_All </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Viso studento išvalymas. </p>
-
-</div>
-</div>
-<a id="a030e4f61ffb96affa5737e148ce1af41" name="a030e4f61ffb96affa5737e148ce1af41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a030e4f61ffb96affa5737e148ce1af41">&#9670;&#160;</a></span>clear_Hw()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Student::clear_Hw </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Namų darbų vektoriaus išvalymas. </p>
-
-</div>
-</div>
-<a id="ae0c981e26367b6f1c9d601546cd71265" name="ae0c981e26367b6f1c9d601546cd71265"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0c981e26367b6f1c9d601546cd71265">&#9670;&#160;</a></span>del_LastHw()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Student::del_LastHw </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Paskutinio namų darbų elemento ištrynimas. </p>
 
 </div>
 </div>
@@ -524,8 +395,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a8d18da42d01f674cdf7647af8f3fb1ec" name="a8d18da42d01f674cdf7647af8f3fb1ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d18da42d01f674cdf7647af8f3fb1ec">&#9670;&#160;</a></span>get_HwRes()</h2>
+<a id="a881e06367d53c6b8ff8a61332ebd36e4" name="a881e06367d53c6b8ff8a61332ebd36e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a881e06367d53c6b8ff8a61332ebd36e4">&#9670;&#160;</a></span>get_HwRes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -534,7 +405,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; int &gt; Student::get_HwRes </td>
+          <td class="memname"><a class="el" href="class_my_vector.html">MyVector</a>&lt; int &gt; Student::get_HwRes </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td> const</td>
@@ -605,33 +476,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Paskutinio namų darbų elemento gavimas. </p>
 <dl class="section return"><dt>Returns</dt><dd>Paskutinis namų darbų elementas </dd></dl>
-
-</div>
-</div>
-<a id="a2b0aab433de4c2d2ffed07f5dd37bd17" name="a2b0aab433de4c2d2ffed07f5dd37bd17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b0aab433de4c2d2ffed07f5dd37bd17">&#9670;&#160;</a></span>hw_Sort()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Student::hw_Sort </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Namų darbų rūšiavimas didėjimo tvarka. </p>
 
 </div>
 </div>
@@ -1095,16 +939,12 @@ Additional Inherited Members</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>code/<a class="el" href="func_8h_source.html">func.h</a></li>
-<li>code/<a class="el" href="func_8cpp.html">func.cpp</a></li>
+<li>code/<b>func.cpp</b></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_student.html">Student</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
 </body>
 </html>

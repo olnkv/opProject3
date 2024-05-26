@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['hw_5flast_0',['hw_Last',['../class_student.html#a3d0b465f0893f75a0af48632b3d847cf',1,'Student']]],
-  ['hw_5fsort_1',['hw_Sort',['../class_student.html#a2b0aab433de4c2d2ffed07f5dd37bd17',1,'Student']]],
-  ['hw_5fsum_2',['hw_Sum',['../class_student.html#ab3f9f6ce11198881ab37fe953ee5f0aa',1,'Student']]],
-  ['hwres_5fempty_3',['hwRes_Empty',['../class_student.html#a6ab3aadbf881211e2ead98e86be1b9fa',1,'Student']]],
-  ['hwres_5fsize_4',['hwRes_Size',['../class_student.html#ad1da823dcb35568fc992a09cb9dd8b13',1,'Student']]]
+  ['emplace_0',['emplace',['../class_my_vector.html#a6f288dfce558388fc0205adabc7ff88a',1,'MyVector']]],
+  ['emplace_5fback_1',['emplace_back',['../class_my_vector.html#aab67878b7944079e287597829600b232',1,'MyVector']]],
+  ['empty_2',['empty',['../class_my_vector.html#a4a4a32abfe8917612561fd8d3919bd2d',1,'MyVector']]],
+  ['end_3',['end',['../class_my_vector.html#a4fd6633954c311e7b4120f5e46d25dd7',1,'MyVector::end() noexcept'],['../class_my_vector.html#a70b01fcee4d31cfee32c96cc486afcf6',1,'MyVector::end() const noexcept']]],
+  ['erase_4',['erase',['../class_my_vector.html#a9f41cdbd28342b8eff64cfc5e01c6e71',1,'MyVector::erase(unsigned int index)'],['../class_my_vector.html#ab998b03d169d0167bb5117a0b034328b',1,'MyVector::erase(T *begin_, T *end_)']]]
 ];
