@@ -150,3 +150,5 @@ Realizuotas "Rule of five" ir aprašyti įvesties ir išvesties operatoriai papr
 Pridėta bendra abstrakti "Person" klasė, kurios išvestinė dabar yra "Student"
 - Release v2.0 (2024-05-03)
 Sukurta HTML dokumentacija. Realizuoti Unit Test'ai su GoogleTest.
+- Release v3.0 (2024-05-24)
+Sukurtas naujas konteineris MyVector. Pridėtas setup failas.
